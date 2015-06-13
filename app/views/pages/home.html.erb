@@ -1,0 +1,37 @@
+<div class="row">
+  <% if !@user %>
+    <div class="image-gradient-dynamic">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt="">
+      <div class="overlay"></div>
+      <div class="copy">
+        <h1>Learn about Spirit Animals</h1>
+        <a href="/signup"><button class="btn btn-lg btn-primary">Sign up</button></a>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <% Card.all.first(3).each do |card| %>
+        <div class="col-md-4">
+          <img src="<%= card.image_url %>" height="300"/>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+  <div class="well">
+    <h1>Choose a deck!</h1>
+  </div>
+  <div class="col-md-12">
+    <% @decks.each do |deck| %>
+      <div class="col-md-4" style="display: block;">
+        <form class="" action="/games" method="post">
+          <input type="hidden" name="user_id" value="<%= @user.id %>">
+          <input type="hidden" name="deck_id" value="<%= deck.id %>">
+          <input type="submit" name="name" value="<%= deck.name %>" class="btn btn-success btn-lg">
+        </form>
+        <br/><hr/>
+        <img src="<%= deck.cards.first.image_url %>" height="300"/>
+      </div>
+    <% end %>
+  </div>
+  <% end %>
+</div>

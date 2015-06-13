@@ -1,0 +1,2 @@
+class PersonalDeck < Deck
+end

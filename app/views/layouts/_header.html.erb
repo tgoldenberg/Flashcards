@@ -1,0 +1,23 @@
+<nav class="navbar navbar-default navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">SpiritAnimals</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="#">My Spirit Animal</a></li>
+        <li><a href="#">My Games</a></li>
+        <% if current_user %>
+        <form class="" action="/logout" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" name="name" value="Sign out" class="btn btn-default btn-sm">
+        </form>
+        <% else %>
+        <li><a href="/login">Sign in</a></li>
+        <li><a href="/signup">Sign up</a></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
