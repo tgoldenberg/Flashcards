@@ -20,4 +20,10 @@ $(function() {
       signInContent.addClass('slideInDown').removeClass('hidden');
     }
   });
+
+  var deck = $('.deck-holder');
+
+  if (deck) {
+    $('#deck0').addClass('active');
+  }
 });

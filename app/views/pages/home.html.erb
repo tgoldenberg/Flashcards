@@ -54,22 +54,25 @@
 
 
   <% else %>
-  <div class="well">
-    <h1>Choose a deck!</h1>
-  </div>
-  <div class="col-md-12">
-    <% @decks.each do |deck| %>
-      <div class="col-md-4" style="display: block;">
+    <div class="image-gradient-dynamic" id="choose-deck-panel">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt="">
+      <div class="overlay"></div>
+      <div class="copy" style="text-align: left;">
+        <p>Hi <%= @user.email%>!</p>
+        <h1>Choose a deck:</h1>
+      </div>
+    </div>
+
+    <% @decks.each_with_index do |deck, idx| %>
+      <div class="deck-holder" id="deck<%= idx %>" style="display: block;">
+        <img src="<%= deck.cards.first.image_url %>" height="300"/>
         <form class="" action="/games" method="post">
           <input type="hidden" name="user_id" value="<%= @user.id %>">
           <input type="hidden" name="deck_id" value="<%= deck.id %>">
           <input type="submit" name="name" value="<%= deck.name %>" class="btn btn-success btn-lg">
-        </form>
-        <br/><hr/>
-        <img src="<%= deck.cards.first.image_url %>" height="300"/>
+        </form>        
       </div>
     <% end %>
-  </div>
   <% end %>
 </div>
 

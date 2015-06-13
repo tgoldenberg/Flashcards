@@ -57,6 +57,50 @@
 }
 // gradient hero panel
 
+@media screen and (max-width: 750px) {
+  .deck-holder#deck0 {
+    top: 55%;
+  }
+  .deck-holder#deck1 {
+    top: 45%;
+  }
+  .deck-holder#deck2 {
+    top: 35%;
+  }
+  .deck-holder img {
+    height: 150px;
+  }
+}
+#deck0 {
+  position: absolute;
+  left: 84%;
+  top: 35%;
+}
+
+#deck1 {
+  position: absolute;
+  left: 66%;
+  top: 25%;
+}
+
+#deck2 {
+  position: absolute;
+  left: 50%;
+  top: 15%;
+}
+
+#choose-deck-panel  {
+  .copy {
+    left: 50%;
+    width: 80%;
+    text-align: left;
+    p {
+      margin: 0;
+      padding: 0;
+      font-weight: 400;
+    }
+  }
+}
 .image-gradient-dynamic {
   $image-gradient-color-top: red;
   $transparency-top: 0.9;
@@ -98,6 +142,7 @@
           font-size: 1em;
         }
     }
+
     h1 {
       color: white;
       font-weight: 300;
