@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   delete 'logout' => 'users#destroy_session'
   put 'users/:id' => 'users#update'
   get 'users/:id/edit' => 'users#edit'
+  post 'games/:id/guess' => 'games#guess'
 end

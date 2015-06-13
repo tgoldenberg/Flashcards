@@ -5,6 +5,8 @@ class Game < ActiveRecord::Base
 
   def assign_card_idx
     self.card_idx = 0
+    self.wrong = 0
+    self.right = 0 
   end
 
   def self.current_game_by_id(id)
