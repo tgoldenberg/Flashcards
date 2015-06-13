@@ -1,13 +1,12 @@
 
 $(function() {
+  var signUp = $('.signup-wrapper');
   $('#signup, .modal-close').on('click', function(e) {
     e.preventDefault();
-    if ($('.signup-wrapper').hasClass('bounceIn')) {
-      $('.signup-wrapper').hide();
-      $('.signup-wrapper').removeClass('bounceIn');
+    if (signUp.hasClass('slideInDown')) {
+      signUp.addClass('hidden').removeClass('slideInDown');
     } else {
-      $('.signup-wrapper').addClass('bounceIn');
-      $('.signup-wrapper').show();
+      signUp.addClass('slideInDown').removeClass('hidden');
     }
   });
 });
