@@ -48,24 +48,47 @@
     font-weight: 300;
   }
 }
-
+.card-image {
+  z-index: 999999;
+}
 .hero-button {
   @include button(flat, #004A00);
   padding: 1em;
   font-size: 1.6em;
   font-weight: 300;
 }
+
+.hero-button#game-init {
+  width: 100%;
+  height: 3em;
+  padding-top: .7em;
+}
 // gradient hero panel
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 768px) {
   .deck-holder#deck0 {
-    top: 55%;
+    top: 56%;
+    left: 80%;
+      .hero-button#game-init {
+        width: 6em;
+      }
+
   }
   .deck-holder#deck1 {
-    top: 45%;
+    top: 43%;
+    left: 80%;
+      .hero-button#game-init {
+        width: 6em;
+      }
+
   }
   .deck-holder#deck2 {
-    top: 35%;
+    top: 30%;
+    left: 80%;
+      .hero-button#game-init {
+        width: 6em;
+      }
+
   }
   .deck-holder img {
     height: 150px;
@@ -88,8 +111,14 @@
   left: 50%;
   top: 15%;
 }
-
+#choose-deck-panel * {
+  pointer-events: none;
+}
+.deck-content-wrapper {
+  pointer-events: none;
+}
 #choose-deck-panel  {
+
   .copy {
     left: 50%;
     width: 80%;

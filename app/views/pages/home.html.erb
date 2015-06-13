@@ -65,14 +65,29 @@
 
     <% @decks.each_with_index do |deck, idx| %>
       <div class="deck-holder" id="deck<%= idx %>" style="display: block;">
-        <img src="<%= deck.cards.first.image_url %>" height="300"/>
+        <img src="<%= deck.cards.first.image_url %>" id="deck-image<%= idx%>"height="300" class="card-image hidden-xs"/>
         <form class="" action="/games" method="post">
           <input type="hidden" name="user_id" value="<%= @user.id %>">
           <input type="hidden" name="deck_id" value="<%= deck.id %>">
-          <input type="submit" name="name" value="<%= deck.name %>" class="btn btn-success btn-lg">
-        </form>        
+          <input type="submit" name="name" value="<%= deck.name %>" class="hero-button" id="game-init">
+        </form>
       </div>
     <% end %>
+    <div class="col-sm-12 deck-content-wrapper">
+      <div class="col-sm-6">
+        <h1 class="deck-title">Water Spirit Animals</h1>
+        <p class="deck-content">
+          Water animal totems are as vast with meaning as the sea itself. Water is a powerful symbol in itself.
+          It's a sign of cleansing, freedom and mobility. Most significantly, water as a symbol is a universal expression of the unconscious.
+          Therefore, water animal totems help us reveal and identify our hidden thoughts or actions.
+          When these creatures find their way into our lives they need to be honored.
+          If we pay attention, they will aid us in identifying our hidden motives, motives that aren't quite healthy for us.
+          Even better, by observing and being open our water animal totems, we learn the ways of simpler, more positive paths of thought, thus replacing the hidden negative ones.
+        </p>
+      </div>
+      <div class="col-md-6"></div>
+    </div>
+
   <% end %>
 </div>
 
