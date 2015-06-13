@@ -17,3 +17,10 @@
 //= require react_ujs
 //= require components
 //= require_tree .
+
+$(function() {
+  $('#logout-link').on('click', function(e) {
+    e.preventDefault();
+    $('#session_delete').submit();
+  });
+});

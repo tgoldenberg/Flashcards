@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   resources :users
   get 'signup' => 'users#signup'
   get 'signin' => 'users#signin'
-  post 'signin' => 'users#create_session'
+  post 'login' => 'users#create_session'
   post 'signup' => 'users#create'
-  delete 'signin' => 'users#destroy_session'
+  delete 'logout' => 'users#destroy_session'
   put 'users/:id' => 'users#update'
   get 'users/:id/edit' => 'users#edit'
 end

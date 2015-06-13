@@ -1,6 +1,11 @@
 class Game < ActiveRecord::Base
+  before_create :assign_card_idx
   belongs_to :user
   belongs_to :deck
+
+  def assign_card_idx
+    self.card_idx = 0
+  end
 
   def self.current_game_by_id(id)
     self.find(id)

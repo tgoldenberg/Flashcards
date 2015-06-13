@@ -1,5 +1,5 @@
 <div class="row">
-  <% if !@user %>
+  <% if !session[:user_id] %>
     <div class="image-gradient-dynamic">
       <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt="">
       <div class="overlay"></div>
@@ -74,14 +74,14 @@
 </div>
 
 <div class="signup-wrapper animated hidden">
-  <div class="modal-close" for="modal-1"></div>
+  <div class="modal-close signup" for="modal-1"></div>
   <h1>Sign Up</h1>
   <form action="/signup" method="post" class="form-horizontal">
     <div class="form-group">
-      <input type="email" name="email" placeholder="email" class="form-control" >
+      <input type="email" name="user[email]" placeholder="email" class="form-control" >
     </div>
     <div class="form-group">
-      <input type="password" name="password" placeholder="password" class="form-control">
+      <input type="password" name="user[password]" placeholder="password" class="form-control">
     </div>
     <input type="submit" value="signup" class="btn btn-success btn-lg">
   </form>

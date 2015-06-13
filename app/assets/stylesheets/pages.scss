@@ -5,10 +5,28 @@
   border-radius: 0;
   margin-bottom: 0;
 }
+.signin-wrapper {
+  width: 23%;
+  margin: auto;
+  position: absolute;
+  opacity: 1;
+  z-index: 9999;
+  background: white;
+  padding-right: 2em;
+  padding-left: 2em;
+  left: 15%;
+  padding-bottom: 1em;
+  border-radius: 3px;
+}
+@media screen and (max-width: 950px) {
+  .signin-wrapper {
+    width: 50%;
+  }
+}
 
 .signup-wrapper {
   position: absolute;
-  top: 20%;
+  top: 8%;
   text-align: center;
   left: 30%;
   z-index: 99999;
@@ -180,7 +198,7 @@
 }
 
 
-.modal-close {
+.modal-close.signup, .modal-close.signin {
   $base-border-color: gainsboro !default;
    $base-border-radius: 3px !default;
    $base-background-color: white !default;
