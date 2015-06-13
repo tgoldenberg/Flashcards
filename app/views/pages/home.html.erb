@@ -4,23 +4,49 @@
       <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt="">
       <div class="overlay"></div>
       <div class="copy">
-        <h1>Learn about Spirit Animals</h1>
-        <a href="/signup"><button class="btn btn-lg btn-primary">Sign up</button></a>
+        <h1 class="hero-title">Learn about Spirit Animals</h1>
+        <a href="/signup"><button class="hero-button">Sign up</button></a>
       </div>
     </div>
 
-    <div class="col-md-12">
-      <div class="col-md-4 flexbox">
-        <img src="<%= @decks[0].cards.first.image_url %>" height="200" style="margin-top: 2em;"/>
-        <img src="<%= @decks[1].cards.first.image_url %>" height="200" style="margin-top: 5em;"/>
-        <img src="<%= @decks[2].cards.first.image_url %>" height="200" style="margin-top: 8em;"/>
-      </div>
-      <div class="col-md-8"></div>
-      <!-- <% Card.all.first(3).each do |card| %>
-        <div class="col-md-4">
-          <img src="<%= card.image_url %>" height="300"/>
+    <div class="col-sm-12">
+      <div class="col-sm-4 flexbox">
+        <div class="hover-tile-outer horse">
+          <div class="hover-tile-container">
+            <div class="hover-tile hover-tile-visible"></div>
+            <div class="hover-tile hover-tile-hidden">
+              <h4>Horse</h4>
+              <p>You have lots of ambition and personal desire. You yearn for independence.</p>
+            </div>
+          </div>
         </div>
-      <% end %> -->
+        <div class="hover-tile-outer dolphin" style="margin-top: 2em;">
+          <div class="hover-tile-container">
+            <div class="hover-tile hover-tile-visible"></div>
+            <div class="hover-tile hover-tile-hidden">
+              <h4>Dolphin</h4>
+              <p>You are very playful and expressive with others</p>
+            </div>
+          </div>
+        </div>
+        <div class="hover-tile-outer dragonfly" style="margin-top: 4em;">
+          <div class="hover-tile-container">
+            <div class="hover-tile hover-tile-visible"></div>
+            <div class="hover-tile hover-tile-hidden">
+              <h4>Dragonfly</h4>
+              <p>You adapt well to different circumstances and understand the transformative process</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-sm-8 site-description">
+        <h2>Want to know what your spirit animal is?</h2>
+        <p>There is a lot we can learn from animals.
+        Find out what your spirit animal is and learn about the spiritual traits of other spirit animals.
+        Find a connection with your spirit animal that will help you be more productive and happy.
+        </p>
+      </div>
     </div>
 
 

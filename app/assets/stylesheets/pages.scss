@@ -6,6 +6,26 @@
   margin-bottom: 0;
 }
 
+.site-description {
+  h2 {
+    font-size: 2.6em;
+    font-weight: 300;
+    margin-top: 2em;
+  }
+  p {
+    font-size: 1.5em;
+    font-weight: 300;
+  }
+}
+
+.hero-button {
+  @include button(flat, #004A00);
+  padding: 1em;
+  font-size: 1.6em;
+  font-weight: 300;
+}
+// gradient hero panel
+
 .image-gradient-dynamic {
   $image-gradient-color-top: red;
   $transparency-top: 0.9;
@@ -38,9 +58,19 @@
     text-align: center;
     top: 50%;
     z-index: 999;
+    @media screen and (max-width: 650px) {
+        h1.hero-title {
+          font-size: 2em;
+          margin-bottom: 1;
+        }
+        .hero-button {
+          font-size: 1em;
+        }
+    }
     h1 {
       color: white;
-      font-weight: 400;
+      font-weight: 300;
+      font-size: 3.5em;
       margin-bottom: 1em;
     }
 
@@ -65,6 +95,73 @@
       @include position(absolute, 0px 0px 0px 0px);
       content: '';
       display: block;
+    }
+  }
+}
+
+// hover tile css
+
+.hover-tile-outer.horse {
+  background: url("http://www.learntarot.com/mehrse.gif");
+  background-position: top;
+  background-size: cover;
+  background-color: beige;
+}
+.hover-tile-outer.dolphin {
+  background: url("http://www.tarotopia.com.au/sites/default/files/med%20cards294.jpg");
+  background-position: top;
+  background-size: cover;
+  background-color: beige;
+}
+.hover-tile-outer.dragonfly {
+  background: url("https://s-media-cache-ak0.pinimg.com/236x/04/10/bf/0410bf6ec9f5218dc5bf7749fa6c599f.jpg");
+  background-position: top;
+  background-size: cover;
+  background-color: beige;
+}
+.hover-tile-outer {
+  $base-border-color: gainsboro !default;
+  $base-line-height: 1.5em !default;
+  $medium-screen: em(640) !default;
+  $hover-tile-height: 20em;
+  $base-spacing: 1.5em;
+
+  margin-right: 1em;
+  border: 1px solid $base-border-color;
+  cursor: pointer;
+  height: $hover-tile-height;
+  width: $hover-tile-height;
+  margin-bottom: $base-line-height;
+
+  .hover-tile-container {
+    height: $hover-tile-height;
+    overflow: hidden;
+  }
+
+  .hover-tile-container:hover > .hover-tile {
+    @include transform(translate(0, -100%));
+  }
+
+  .hover-tile {
+    @include transition(all, 0.2s ease-in-out);
+    background: inherit;
+    color: white;
+    height: inherit;
+    overflow: hidden;
+    padding: $base-spacing;
+  }
+
+  .hover-tile-hidden {
+    background: transparentize(#000, 0.5);
+    padding: 3px;
+    padding-left: 4px;
+    p {
+      color: transparentize(#fff, 0.3);
+      line-height: $base-line-height;
+    }
+
+    h4 {
+      margin: 0 0 0.5em 0;
     }
   }
 }
