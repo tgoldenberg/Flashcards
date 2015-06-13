@@ -6,6 +6,20 @@
   margin-bottom: 0;
 }
 
+.signup-wrapper {
+  display: none;
+  position: absolute;
+  top: 44%;
+  text-align: center;
+  left: 30%;
+  z-index: 99999;
+  background: white;
+  width: 42%;
+  border-radius: 3px;
+  padding: 3em;
+  box-shadow: -2px 2px 2px #999;
+}
+
 .site-description {
   h2 {
     font-size: 2.6em;
@@ -163,5 +177,50 @@
     h4 {
       margin: 0 0 0.5em 0;
     }
+  }
+}
+
+
+.modal-close {
+  $base-border-color: gainsboro !default;
+   $base-border-radius: 3px !default;
+   $base-background-color: white !default;
+   $base-font-size: 1em !default;
+   $base-line-height: 1.5em !default;
+   $action-color: #477DCA !default;
+   $dark-gray: #333 !default;
+   $light-gray: #DDD !default;
+   $medium-screen: em(640) !default;
+   $large-screen: em(860) !default;
+   $base-font-color: $dark-gray !default;
+   $modal-padding: 3em;
+   $modal-background: $base-background-color;
+   $modal-close-color: $light-gray;
+   $modal-image-height: 135px;
+   $modal-image-width: $modal-image-height;
+   $modal-trigger-image-width: 300px;
+  @include position(absolute, ($modal-padding /2) ($modal-padding /2) null null);
+  @include size(1.5em);
+  background: $modal-background;
+  cursor: pointer;
+
+  &:after,
+  &:before {
+    @include position(absolute, 3px 3px 0 50%);
+    @include transform(rotate(45deg));
+    @include size(0.15em 1.5em);
+    background: $modal-close-color;
+    content: '';
+    display: block;
+    margin: -3px 0 0 -1px;
+  }
+
+  &:hover:after,
+  &:hover:before {
+    background: darken($modal-close-color, 10%);
+  }
+
+  &:before {
+    @include transform(rotate(-45deg));
   }
 }
