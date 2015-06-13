@@ -10,12 +10,23 @@
     </div>
 
     <div class="col-md-12">
-      <% Card.all.first(3).each do |card| %>
+      <div class="col-md-4 flexbox">
+        <img src="<%= @decks[0].cards.first.image_url %>" height="200" style="margin-top: 2em;"/>
+        <img src="<%= @decks[1].cards.first.image_url %>" height="200" style="margin-top: 5em;"/>
+        <img src="<%= @decks[2].cards.first.image_url %>" height="200" style="margin-top: 8em;"/>
+      </div>
+      <div class="col-md-8"></div>
+      <!-- <% Card.all.first(3).each do |card| %>
         <div class="col-md-4">
           <img src="<%= card.image_url %>" height="300"/>
         </div>
-      <% end %>
+      <% end %> -->
     </div>
+
+
+
+
+
   <% else %>
   <div class="well">
     <h1>Choose a deck!</h1>
