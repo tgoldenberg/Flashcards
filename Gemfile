@@ -15,6 +15,7 @@ gem 'react-rails'
 gem 'pry'
 gem 'faker'
 gem 'bourbon'
+gem 'responders', '~> 2.0'
 
 group :development, :test do
   gem 'byebug'
