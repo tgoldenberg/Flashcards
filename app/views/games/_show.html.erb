@@ -1,0 +1,54 @@
+
+<div class="col-sm-12 card-wrapper">
+  <div class="col-md-5 card-image-holder">
+    <div class="image-wrapper">
+      <% if @messages %>
+        <% @messages.each do |message| %>
+          <p> <%= message %></p>
+        <% end %>
+      <% end %>
+      <h1><%= current_card.name %></h1>
+      <img src="<%= current_card.image_url %>" height="370" />
+    </div>
+  </div>
+  <div class="col-md-7 table-wrapper">
+    <h2>This spirit animal has the <b>following attribute: </b></h2>
+    <table class="tables">
+      <thead>
+        <br />
+        <tr><p style="font-size: 1.5em;">Choose one of the following:</p></tr>
+      </thead>
+      <br />
+      <tbody>
+        <% @cards.each_with_index do |card, idx| %>
+          <tr>
+            <td class="action-td"><b><%= @letters[idx] %>.</b></td>
+            <td class="hover-td"><%= card %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br /><br />
+    <div class="button-wrapper">
+      <div class="col-sm-3 col-sm-offset-1">
+        <form class="" action="/games/<%= @game.id %>/guess" method="post">
+          <input type="hidden" name="selection" value="<%= @cards[0] %>">
+          <input type="submit" name="name" value="A" class="hero-button">
+        </form>
+      </div>
+      <div class="col-sm-3">
+        <form class="" action="/games/<%= @game.id %>/guess" method="post">
+          <input type="hidden" name="selection" value="<%= @cards[1] %>">
+          <input type="submit" name="name" value="B" class="hero-button">
+        </form>
+      </div>
+      <div class="col-sm-3">
+        <form class="" action="/games/<%= @game.id %>/guess" method="post">
+          <input type="hidden" name="selection" value="<%= @cards[2] %>">
+          <input type="submit" name="name" value="C" class="hero-button">
+        </form>
+      </div>
+    </div>
+    <br />
+  </div>
+</div>
