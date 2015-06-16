@@ -1,4 +1,7 @@
 class Game < ActiveRecord::Base
+  validates_presence_of :user_id
+  validates_presence_of :deck_id
+  
   before_create :assign_card_idx
   belongs_to :user
   belongs_to :deck
@@ -6,7 +9,7 @@ class Game < ActiveRecord::Base
   def assign_card_idx
     self.card_idx = 0
     self.wrong = 0
-    self.right = 0 
+    self.right = 0
   end
 
   def self.current_game_by_id(id)

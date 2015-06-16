@@ -1,4 +1,4 @@
 class Card < ActiveRecord::Base
-  belongs_to :default_deck, foreign_key: 'deck_id'
-  belongs_to :personal_deck, foreign_key: 'deck_id'
+  validates_presence_of :name, :description, :answer, :image_url, :deck_id
+  belongs_to :deck
 end

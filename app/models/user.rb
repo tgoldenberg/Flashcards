@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  validates_presence_of :email
+  validates_presence_of :password
+  validates_uniqueness_of :email
   include BCrypt
 
   has_one :personal_deck

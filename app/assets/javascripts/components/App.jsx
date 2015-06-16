@@ -10,7 +10,8 @@ var App = React.createClass({
     newData.game = data.game;
     newData.card = data.card;
     newData.cards = data.cards;
-    this.setState({data: newData});
+    this.setState({data: newData}); s
+    
     return false;
   },
 
