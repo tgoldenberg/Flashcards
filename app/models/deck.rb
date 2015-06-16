@@ -1,4 +1,6 @@
 class Deck < ActiveRecord::Base
+  validates_presence_of :name
+  
   has_many :games
   has_many :cards
   belongs_to :user

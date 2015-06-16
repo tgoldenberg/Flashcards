@@ -3,6 +3,19 @@
     height: 9em;
   }
 }
+.flip-side.image-wrapper {
+  display: block;
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  text-align: center;
+  background: #f7f7f7;
+  p {
+    padding: 1em;
+  }
+}
+.flip-card-front {
+  cursor: pointer;
+}
 
 .games-show-wrapper.col-sm-12 {
   margin: 0;
@@ -12,15 +25,35 @@
   }
 }
 .card-wrapper {
+  .card-image-holder:hover .card-flipper {
+    transform: rotateY(180deg);
+  }
   .card-image-holder {
+    position: relative;
+    z-index: 1;
+    perspective: 1000;
     padding-top: 2em;
+
+    .card-flipper {
+      width: 70%;
+      height: 90%;
+      margin: auto;
+      transform-style: preserve-3d;
+      transition: all 1.0s linear;
+    }
+
     .image-wrapper {
       border: 1px solid #e6e6e6;
       border-radius: 3px;
       box-shadow: -2px 2px 2px #555;
       margin: auto;
-      width: 70%;
+      width: 100%;
       margin: auto;
+      position: absolute;
+      backface-visibility: hidden;
+    }
+    #large-image {
+      margin-bottom: 4em;
     }
 
   }
