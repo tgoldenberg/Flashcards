@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 
   def create_session
     @user = User.find_by_email(params[:user][:email])
-    if @user.password == params[:user][:password]
+    if @user && @user.password == params[:user][:password]
       session[:user_id] = @user.id
       redirect_to root_url
     else
